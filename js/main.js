@@ -2,6 +2,10 @@ document.getElementById("lgin").addEventListener("click", function () {
     window.location.href = "../html/login.html";
   });
 
+  document.getElementById("petsAdpt").addEventListener("click", function () {
+    window.location.href = "../html/pets.php";
+  });
+
 
   const imgContainers = document.querySelectorAll('.four .img-container');
   imgContainers.forEach(imgContainer => {
@@ -25,3 +29,17 @@ document.getElementById("lgin").addEventListener("click", function () {
       document.querySelector('.article-space .shadowBg').style.backgroundColor = ''; 
     });
   });
+
+
+  document.querySelector(".four .img-container:nth-child(2)").addEventListener("click",function(){
+    window.location.href = "../html/pets.php?type=cat"
+  })
+
+  document.querySelector(".four .img-container:nth-child(3)").addEventListener("click",function(){
+    window.location.href = "../html/pets.php?type=dog"
+  })
+
+  document.querySelector(".four .img-container:nth-child(4)").addEventListener("click",function(){
+    window.location.href = "../html/pets.php?type=other"
+  })
+

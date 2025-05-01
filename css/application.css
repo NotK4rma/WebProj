@@ -1,0 +1,111 @@
+/* My Applications Page CSS */
+
+/* Status Badge Styles */
+.status-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.status-pending {
+    background-color: #f0ad4e;
+    color: #fff;
+}
+
+.status-approved {
+    background-color: #5cb85c;
+    color: #fff;
+}
+
+.status-rejected {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+/* Application Actions */
+.application-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.pet-learn-more,
+.application-details-btn {
+    flex: 1;
+    display: block;
+    text-align: center;
+    padding: 0.8rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pet-learn-more {
+    background-color: rgb(94, 8, 94);
+    color: white;
+}
+
+.application-details-btn {
+    background-color: var(--asfer);
+    color: #333;
+}
+
+.pet-learn-more:hover,
+.application-details-btn:hover {
+    transform: scale(1.05);
+}
+
+.pet-learn-more:hover {
+    background-color: var(--asfer);
+    color: #333;
+}
+
+.application-details-btn:hover {
+    background-color: rgb(94, 8, 94);
+    color: white;
+}
+
+/* Not Logged In Message */
+.not-logged-in {
+    grid-column: 1 / -1;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.not-logged-in h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.login-button {
+    display: inline-block;
+    background-color: var(--asfer);
+    color: #333;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: rgb(94, 8, 94);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 767px) {
+    .application-actions {
+        flex-direction: column;
+    }
+}
