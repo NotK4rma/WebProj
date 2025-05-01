@@ -46,6 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+if (!empty($errors)) {
+    $encodedErrors = urlencode(json_encode($errors));
+    header("Location: ../html/signup.html?errors=" . $encodedErrors);
+    exit;
+}
+
 
 // if(isset($errors) && !empty($errors)) {
 //     echo '<div id="error-popup" class="error-popup">';

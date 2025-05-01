@@ -20,6 +20,7 @@ body{
 header{
     height: 200px;
     position: relative;
+
 }
 h1{
     text-transform: capitalize;
@@ -245,17 +246,60 @@ h1{
     top: 10%;
     height: max-content;
 }
+.shadowBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); 
+    z-index: 1; 
+    transition: all 0.3s ease;
+}
 .four{
     width: 100%;
+    position: relative;
     background-color: rgba(250, 206, 24, 0.8);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     padding: 2em;
 }
+
+.article-space{
+    position: relative;
+}
+.section_article_title, .articles{
+    z-index: 5;
+    position: relative;
+}
+
+
+
+
+
+
+.line {
+    background-image: linear-gradient(90deg,rgb(0,183,255), rgb(255,48,255));
+    height: 4px;
+    width: 0;
+    border-radius: 5px;
+    margin: 0 auto;
+    transition: width 0.5s ease-out;
+    z-index: 10;
+    
+}
+
+.img-container:hover .line{
+    width: 24.67vmin;
+}
+
+
+
 .grid-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin: 20px;
+    
 }
 .img-container{
     display: flex;
@@ -263,14 +307,19 @@ h1{
     background-color: #f6f6f6;
     margin: 20px;
     padding: 0;
+    overflow: hidden;
     position: relative;
     flex-direction: column;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+    border: 0 black solid;
+    transition: transform 0.3s ease, box-shadow 0.3s ease,border-width 0.25s ease-in;
 }
 .img-container:hover{
     transform: scale(1.1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+    border-width:3px ;
+    
 }
 .img-container img{
     width: 100%;
@@ -281,9 +330,11 @@ h1{
 .img-container h3{
     padding-top: 30px;
     text-align: center;
-    font-size: 2em;
+    font-size: 2.2em;
     text-transform: capitalize;
+    font-family: 'Lato', sans-serif;;
 }
+
 .section2 a{
     font-size: 2em;
     display: block;
@@ -294,6 +345,11 @@ h1{
     text-decoration-color: var(--asfer); 
     transition: transform 0.3s ease;
 }
+
+
+
+
+
 a:hover{
     transform: scale(1.2);  
 }
@@ -304,9 +360,13 @@ a:hover{
 }
 .section_article_title{
     height: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.section_article_title >h1{
-    color: black;
+.section_article_title >h1, .section2>h1{
+    color: white;
     text-decoration: none;
     justify-content: center;
     text-align: center;
@@ -314,7 +374,10 @@ a:hover{
     font-size: 2rem;
     transition: transform 0.3s ease;
 }
-.section_article_title >h1:hover{
+.section2>h1{
+    color: white;
+}
+.section_article_title >h1:hover,.section2>h1:hover{
     transform: scale(1.2);  
 
 }
@@ -350,7 +413,10 @@ a:hover{
 .article-1:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+
 }
+
+ 
 
 .article-1 button {
     width: 60px;
@@ -358,7 +424,7 @@ a:hover{
     background-color: grey;
     clip-path: path("M30 52s-26-15.6-26-30C4 13.4 12.4 6 20 6c5 0 8.4 2.4 10 5 1.6-2.6 5-5 10-5 7.6 0 16 7.4 16 16 0 14.4-26 30-26 30z");
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.35s ease-in-out, color 0.3s ease;
 }
 
 
@@ -416,6 +482,7 @@ footer{
 
 .article-1 button:hover {
     background-color: red;
+    color:white
 }
 
 

@@ -33,17 +33,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         else{
             $errors[]="Password is incorrect";
-            header("Location: ../html/index.html");
+            
         }
         
     }
     else{
         $errors[]="Email doesnt exist! Create a new account.";
-        header("Location: ../html/index.html");
+        
     }
     
  
    
+}
+
+if (!empty($errors)) {
+    $encodedErrors = urlencode(json_encode($errors));
+    header("Location: ../html/login.html?errors=" . $encodedErrors);
+    exit;
 }
 
 // if(isset($errors) && !empty($errors)) {
