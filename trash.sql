@@ -1,0 +1,18 @@
+INSERT INTO pets (name, type, breed, age, gender, image_path, description) VALUES
+('Max', 'dog', 'Golden Retriever', 3.5, 'male', '/img/golden_retriever.jpg', 'Max is a friendly and playful Golden Retriever who loves running and playing fetch. He gets along well with children and other dogs.'),
+('Luna', 'cat', 'Maine Coon', 2, 'female', '/img/maine_coon.jpg', 'Luna is a beautiful Maine Coon with a fluffy coat. She\'s independent but affectionate and loves to cuddle on cold nights.'),
+('Bella', 'dog', 'Labrador', 1.5, 'female', '/img/labrador.jpg', 'Bella is an energetic young Labrador who loves water and playing outdoors. She\'s great with families and other pets.'),
+('Oliver', 'cat', 'Siamese', 4, 'male', '/img/siamese.jpg', 'Oliver is a vocal Siamese cat who loves attention. He\'s playful, intelligent, and will follow you around the house.'),
+('Charlie', 'dog', 'Beagle', 5, 'male', '/img/beagle.jpg', 'Charlie is a curious Beagle with a great nose. He loves to explore and would be perfect for an active family.'),
+('Lucy', 'cat', 'Ragdoll', 3, 'female', '/img/ragdoll.jpg', 'Lucy is a gentle Ragdoll who loves to be held. She\'s calm, patient, and gets along well with children.'),
+('Cooper', 'dog', 'German Shepherd', 2.5, 'male', '/img/german_shepherd.jpg', 'Cooper is an intelligent German Shepherd who is easy to train. He\'s loyal and would make a great family protector.'),
+('Lily', 'cat', 'Persian', 6, 'female', '/img/persian.jpg', 'Lily is a calm Persian cat who enjoys lounging in sunny spots. She needs regular grooming for her long coat.'),
+('Rocky', 'dog', 'Siberian Husky', 3, 'male', '/img/husky.jpg', 'Rocky is an energetic Husky who loves to run. He needs plenty of exercise and would be great for outdoor enthusiasts.'),
+('Milo', 'cat', 'Bengal', 1, 'male', '/img/bengal.jpg', 'Milo is a playful Bengal kitten with beautiful spotted coat. He\'s energetic and loves interactive toys.'),
+('Buddy', 'dog', 'Poodle', 7, 'male', '/img/poodle.jpg', 'Buddy is an intelligent standard Poodle. He\'s hypoallergenic and great for families with allergies.'),
+('Chloe', 'cat', 'Scottish Fold', 2.5, 'female', '/img/scottish_fold.jpg', 'Chloe is an adorable Scottish Fold with folded ears. She\'s sweet-natured and gets along with everyone.'),
+('Ruby', 'rabbit', 'Holland Lop', 1, 'female', '/img/holland_lop.jpg', 'Ruby is a cute Holland Lop rabbit with floppy ears. She\'s gentle and enjoys being petted.'),
+('Oscar', 'bird', 'Cockatiel', 3, 'male', '/img/cockatiel.jpg', 'Oscar is a friendly cockatiel who can whistle simple tunes. He enjoys human interaction.'),
+('Daisy', 'guinea pig', 'American', 2, 'female', '/img/guinea_pig.jpg', 'Daisy is a sweet guinea pig who loves vegetables. She makes adorable sounds when excited.'),
+('Leo', 'turtle', 'Red-Eared Slider', 5, 'male', '/img/turtle.jpg', 'Leo is a calm red-eared slider turtle. He\'s easy to care for and fascinating to watch.');
+

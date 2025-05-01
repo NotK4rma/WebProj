@@ -1,0 +1,181 @@
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+    background-color: #f6f6f6;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation: slideIn 0.4s ease-out;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Title and Text */
+.modal-content h2 {
+    color: rgb(94, 8, 94);
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.modal-content p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Calculator Form */
+.calculator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: #333;
+}
+
+.input-group input {
+    padding: 0.8rem;
+    border-radius: 50px;
+    border: 2px solid rgba(99, 51, 147, 0.3);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--asfer);
+    box-shadow: 0 0 8px rgba(250, 206, 24, 0.4);
+}
+
+#calculate-btn {
+    background-color: var(--asfer);
+    border: none;
+    padding: 0.8rem;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#calculate-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(250, 206, 24, 0.5);
+}
+
+/* Result Container */
+.result-container {
+    background-color: rgba(99, 51, 147, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#result-display {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.dog-emoji, .human-emoji {
+    font-size: 1.8rem;
+}
+
+#result-text {
+    margin-top: 0.8rem;
+    color: rgb(94, 8, 94);
+    font-weight: 600;
+}
+
+.calculation-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.8rem;
+    font-style: italic;
+}
+
+/* Body class when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.pulse {
+    animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 767px) {
+    .modal-content {
+        padding: 1.5rem;
+        width: 95%;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .close-btn {
+        top: 10px;
+        right: 15px;
+    }
+}

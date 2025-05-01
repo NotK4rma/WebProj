@@ -34,11 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(empty($errors)) {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         
-        $sql = "INSERT INTO users (first_name, last_name, email, password, phone, location, pet_preferences) 
-                VALUES ('$first_name', '$last_name', '$email', '$hashed_password', '$phone', '$location', '$pet_preferences_str')";
+        $sql = "INSERT INTO users (first_name, last_name, email, password, phone) 
+                VALUES ('$first_name', '$last_name', '$email', '$hashed_password', '$phone')";
         
         if ($conn->query($sql) === TRUE) {
-            header("Location: registration_success.php");
+            header("Location: ../html/index.html");
             exit();
         } else {
             $errors[] = "Error: " . $sql . "<br>" . $conn->error;
