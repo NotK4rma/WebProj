@@ -20,10 +20,15 @@
 <body>
     <header>
         <section>
-            <div class="sign-in">
-                <span class="person material-symbols-outlined">person</span>    
+        <div class="sign-in">
+            <?php if (isset($_SESSION["id"])): ?>
+                <span class="greeting">Hello, <?php echo htmlspecialchars($_SESSION["username"]); ?>!</span>
+            <?php else: ?>
+            
+                <span class="person material-symbols-outlined">person</span>
                 <button class="sign-in-btn" id="lgin">SIGN IN</button>
-            </div>
+            <?php endif; ?>
+        </div>
             <div class="logo">
                 <img class="logo-pic" src="../img/logo-nobg.png" >
                 <h1 class="txt">AdoptiPet</h1>
@@ -43,7 +48,7 @@
                     <div>
                         <div>
                             <ul>
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="index.php">Home</a></li>
                                 <li><a href="pets.php?type=cat">Cats</a></li>
                                 <li><a href="pets.php?type=dog">Dogs</a></li>
                                 <li><a href="mypets.php">My Pets</a></li>
@@ -100,7 +105,7 @@
             
             
             // Check if user is logged in
-            if(!isset($_SESSION['user_id'])) {
+            if(!isset($_SESSION['id'])) {
                 echo "<div class='not-logged-in'>
                         <h2>You need to be logged in to view your applications</h2>
                         <a href='login.html' class='login-button'>Log In</a>
@@ -108,7 +113,7 @@
                 exit;
             }
             
-            $user_id = $_SESSION['user_id'];
+            $user_id = $_SESSION['id'];
             
             // Include the database connection file
             include '../php/dbConnection.php';

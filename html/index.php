@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,8 +19,14 @@
     <header>
         <section>
             <div class="sign-in">
-                <span class="person material-symbols-outlined">person</span>    
-                <button class="sign-in-btn" id="lgin">SIGN IN</button>
+                <?php if (isset($_SESSION["id"])): ?>
+                    
+                    <a class="greeting" href="../php/logout.php">Hello, <?php echo htmlspecialchars($_SESSION["username"]); ?>!</a>
+                <?php else: ?>
+
+                    <span class="person material-symbols-outlined">person</span>
+                    <button class="sign-in-btn" id="lgin">SIGN IN</button>
+                <?php endif; ?>
             </div>
             <div class="logo">
                 <img class="logo-pic" src="../img/logo-nobg.png" >

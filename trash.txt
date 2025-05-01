@@ -16,3 +16,52 @@ INSERT INTO pets (name, type, breed, age, gender, image_path, description) VALUE
 ('Daisy', 'guinea pig', 'American', 2, 'female', '/img/guinea_pig.jpg', 'Daisy is a sweet guinea pig who loves vegetables. She makes adorable sounds when excited.'),
 ('Leo', 'turtle', 'Red-Eared Slider', 5, 'male', '/img/turtle.jpg', 'Leo is a calm red-eared slider turtle. He\'s easy to care for and fascinating to watch.');
 
+// if(isset($errors) && !empty($errors)) {
+//     header("Location: ../html/login.html");
+//     echo '<div id="error-popup" class="error-popup">';
+//     echo '<div class="error-popup-content">';
+//     echo '<div class="error-header">';
+//     echo '<h3><i class="fas fa-exclamation-circle"></i> Oops! There was a problem</h3>';
+//     echo '<span class="close-btn">&times;</span>';
+//     echo '</div>';
+//     echo '<div class="error-body">';
+    
+
+//     echo '<ul class="error-list">';
+//     foreach($errors as $error) {
+//         echo '<li>' . htmlspecialchars($error) . '</li>';
+//     }
+//     echo '</ul>';
+    
+//     echo '</div>';
+//     echo '</div>';
+//     echo '</div>';
+    
+    
+//     echo '<script>
+//         document.addEventListener("DOMContentLoaded", function() {
+//             var errorPopup = document.getElementById("error-popup");
+            
+//             // Show the popup
+//             errorPopup.classList.add("show");
+            
+//             // Close button functionality
+//             var closeBtn = document.querySelector(".close-btn");
+//             closeBtn.addEventListener("click", function() {
+//                 errorPopup.classList.remove("show");
+//                 setTimeout(function() {
+//                     errorPopup.style.display = "none";
+//                 }, 300);
+//             });
+            
+//             // Auto-dismiss after 8 seconds
+//             setTimeout(function() {
+//                 errorPopup.classList.remove("show");
+//                 setTimeout(function() {
+//                     errorPopup.style.display = "none";
+//                 }, 300);
+//             }, 8000);
+//         });
+//     </script>';
+// }
+// echo '<link rel="stylesheet" href="../css/error.css">';

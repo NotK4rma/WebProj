@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 
 $servername = "localhost"; 
@@ -38,7 +38,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 VALUES ('$first_name', '$last_name', '$email', '$hashed_password', '$phone')";
         
         if ($conn->query($sql) === TRUE) {
-            header("Location: ../html/index.html");
+            $getIdSql = "select id from users where email = '$email'";
+            $idRes = $conn->query($getIdSql);
+            if($idRes->num_rows > 0){
+                $rows = $idRes->fetch_assoc();
+                $_SESSION["id"] = $rows["id"];
+                header("Location: ../html/index.php");
+            }
+            
             exit();
         } else {
             $errors[] = "Error: " . $sql . "<br>" . $conn->error;
