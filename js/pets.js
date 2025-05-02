@@ -5,16 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterAge = document.getElementById('filter-age');
     const filterGender = document.getElementById('filter-gender');
     const filterButton = document.querySelector('.filter-button');
-    
+    const search = document.querySelector('.search-input');
+
     
     filterButton.addEventListener('click', applyFilters);
-    
+
+
     
     function applyFilters() {
-        
         const currentUrl = new URL(window.location.href);
-        const searchParams = currentUrl.searchParams;
-        
+        const searchParams = currentUrl.searchParams; 
         
         if (filterType.value) {
             searchParams.set('type', filterType.value);
@@ -33,6 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             searchParams.delete('gender');
         }
+
+
         
         
         window.location.href = currentUrl.toString();
@@ -46,6 +48,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    search.addEventListener('keypress', function(x){
+
+        const currentUrl = new URL(window.location.href);
+        const searchParams = currentUrl.searchParams;
+
+        if(x.key=='Enter'){
+            x.preventDefault();
+            console.log('pressed');
+            
+            searchParams.set('pname',search.value);
+            console.log(searchParams.toString())
+            console.log(currentUrl.toString())
+            console.log(search.value)
+            window.location.href = currentUrl.toString();
+        }
+    })
     
     
     const petCards = document.querySelectorAll('.pet-card');

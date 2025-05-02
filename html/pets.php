@@ -32,12 +32,12 @@ session_start();
                 <img class="logo-pic" src="../img/logo-nobg.png" >
                 <h1 class="txt">AdoptiPet</h1>
             </div>
-            <form >
+            
             <div class="search">
                 <span class="search-icon material-symbols-outlined">search</span>
                 <input class="search-input" type="search" placeholder="Search">
             </div>
-            </form>
+            
             <div class="menu-wrap">
                 <input type="checkbox" class="toggler">
                 <div class="hamburger">
@@ -153,8 +153,16 @@ session_start();
                 $gender = $conn->real_escape_string($_GET['gender']);
                 $sql .= " AND gender = '$gender'";
             }
+
+            if(isset($_GET['pname']) && !empty($_GET['pname'])) {
+                $name = $conn->real_escape_string($_GET['pname']);
+                file_put_contents('../error.log', $name, FILE_APPEND);
+                $sql .= " AND `name` = '$name'";
+            }
+
+            file_put_contents('../error.log', $sql, FILE_APPEND);
             
-            
+
             $result = $conn->query($sql);
             
             

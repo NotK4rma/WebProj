@@ -1,0 +1,1 @@
+SELECT * FROM pets WHERE 1=1MaxSELECT * FROM pets WHERE 1=1 AND `name` = 'Max'MaxSELECT * FROM pets WHERE 1=1 AND type = 'cat' AND `name` = 'Max'

@@ -9,11 +9,11 @@ document.querySelector(".logo .txt").addEventListener("click", function(){
   window.location.href = "../html/index.php"
 })
 
-
-document.querySelector(".faqdiv button").addEventListener("click", function(){
-  window.location.href = "../html/faqs.php"
-})
-
+if(document.querySelector(".faqdiv button")){
+  document.querySelector(".faqdiv button").addEventListener("click", function(){
+    window.location.href = "../html/faqs.php"
+  })
+}
 
   document.getElementById("petsAdpt").addEventListener("click", function () {
     window.location.href = "../html/pets.php";
