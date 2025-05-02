@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if($idRes->num_rows > 0){
                 $rows = $idRes->fetch_assoc();
                 $_SESSION["id"] = $rows["id"];
+                $_SESSION["username"] = $first_name;
                 header("Location: ../html/index.php");
             }
             

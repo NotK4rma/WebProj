@@ -1,9 +1,9 @@
-// Get elements
+
 const dogAgeArticle = document.querySelector('.calcDog button');
 console.log(dogAgeArticle);
 const body = document.body;
 
-// Create modal HTML
+
 const modalHTML = `
 <div id="dog-age-modal" class="modal">
     <div class="modal-content">
@@ -31,10 +31,10 @@ const modalHTML = `
 </div>
 `;
 
-// Insert modal HTML into the body
+
 body.insertAdjacentHTML('beforeend', modalHTML);
 
-// Get modal elements
+
 const modal = document.getElementById('dog-age-modal');
 const closeBtn = document.querySelector('.close-btn');
 const calculateBtn = document.getElementById('calculate-btn');
@@ -56,7 +56,7 @@ dogAgeInput.addEventListener('keypress', (e) => {
     }
 });
 
-// Functions
+
 function openModal() {
     modal.style.display = 'flex';
     body.classList.add('modal-open');
@@ -66,7 +66,7 @@ function openModal() {
 function closeModal() {
     modal.style.display = 'none';
     body.classList.remove('modal-open');
-    // Reset input and result
+   
     dogAgeInput.value = '';
     resultText.textContent = 'Enter your dog\'s age to see equivalent human years';
 }
@@ -93,19 +93,19 @@ function calculateAge() {
         humanAge = 24 + (dogAge - 2) * 4.5;
     }
     
-    // Round to one decimal place
+    
     humanAge = Math.round(humanAge * 10) / 10;
     
     resultText.innerHTML = `<strong>${dogAge} dog ${dogAge === 1 ? 'year' : 'years'} = ${humanAge} human ${humanAge === 1 ? 'year' : 'years'}</strong>`;
     
-    // Add animation class to result
+   
     resultText.classList.add('pulse');
     setTimeout(() => {
         resultText.classList.remove('pulse');
     }, 1000);
 }
 
-// Export for testing (if needed)
+
 if (typeof module !== 'undefined') {
     module.exports = { calculateAge };
 }

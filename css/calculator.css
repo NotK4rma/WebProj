@@ -1,4 +1,4 @@
-/* Modal Styles */
+
 .modal {
     display: none;
     position: fixed;
@@ -24,7 +24,7 @@
     animation: slideIn 0.4s ease-out;
 }
 
-/* Close Button */
+
 .close-btn {
     position: absolute;
     top: 15px;
@@ -39,7 +39,7 @@
     color: #000;
 }
 
-/* Title and Text */
+
 .modal-content h2 {
     color: rgb(94, 8, 94);
     margin-bottom: 0.5rem;
@@ -53,7 +53,7 @@
     color: #333;
 }
 
-/* Calculator Form */
+
 .calculator-form {
     display: flex;
     flex-direction: column;
@@ -103,7 +103,7 @@
     box-shadow: 0 5px 15px rgba(250, 206, 24, 0.5);
 }
 
-/* Result Container */
+
 .result-container {
     background-color: rgba(99, 51, 147, 0.1);
     padding: 1.5rem;
@@ -137,12 +137,12 @@
     font-style: italic;
 }
 
-/* Body class when modal is open */
+
 body.modal-open {
     overflow: hidden;
 }
 
-/* Animations */
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -163,7 +163,7 @@ body.modal-open {
     100% { transform: scale(1); }
 }
 
-/* Responsive adjustments */
+
 @media screen and (max-width: 767px) {
     .modal-content {
         padding: 1.5rem;

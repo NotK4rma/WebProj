@@ -1,13 +1,13 @@
-/* Pets Page CSS */
 
-/* Main Container */
+
+
 .pets-container {
     padding: 2rem;
     background-color: rgba(62, 16, 107, 0.818);
     min-height: 600px;
 }
 
-/* Header Styles */
+
 .pets-header {
     margin-bottom: 2rem;
 }
@@ -20,7 +20,7 @@
     font-weight: bold;
 }
 
-/* Filters */
+
 .filter-container {
     background-color: rgba(99, 51, 147, 0.4);
     border-radius: 15px;
@@ -72,20 +72,25 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     align-self: flex-end;
 }
+.greeting{
+    text-decoration: none;
+    color: black;
+
+}
 
 .filter-button:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(250, 206, 24, 0.5);
 }
 
-/* Pet Grid */
+
 .pets-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-/* Pet Card */
+
 .pet-card {
     background-color: #f6f6f6;
     border-radius: 20px;
@@ -103,7 +108,7 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Pet Image */
+
 .pet-image-container {
     height: 250px;
     position: relative;
@@ -121,7 +126,7 @@
     transform: scale(1.1);
 }
 
-/* Quick Info Badges */
+
 .pet-quick-info {
     position: absolute;
     bottom: 0;
@@ -143,7 +148,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Pet Info */
+
 .pet-info {
     padding: 1.5rem;
     display: flex;
@@ -215,7 +220,7 @@
     transform: scale(1.05);
 }
 
-/* No Pets Message */
+
 .no-pets-message {
     grid-column: 1 / -1;
     text-align: center;
@@ -226,7 +231,7 @@
     color: #666;
 }
 
-/* Responsive Adjustments */
+
 @media screen and (max-width: 1024px) {
     .pets-header h1 {
         font-size: 2rem;

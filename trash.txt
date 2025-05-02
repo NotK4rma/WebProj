@@ -65,3 +65,10 @@ INSERT INTO pets (name, type, breed, age, gender, image_path, description) VALUE
 //     </script>';
 // }
 // echo '<link rel="stylesheet" href="../css/error.css">';
+
+
+
+INSERT INTO pets (name, type, breed, age, gender, description, image_path, is_adopted) VALUES
+('Jack', 'dog', 'Pit Bull', 3, 'male', 'Jack is a strong and loyal Pit Bull. He is friendly and protective, making him a great companion.', '/img/adoptionPit2.jpg', 0),
+('Tulip & Tati', 'cat', 'Tabby', 1, 'female', 'Tulip & Tati are a playful Tabby cat twins with a curious nature. they love exploring and cuddling.', '/img/adoptionCats.jpg', 0),
+('Jerrero', 'rabbit', 'Mini Rex', 1, 'male', 'Jerrero is an adorable Mini Rex rabbit with soft fur. He is gentle and loves being petted.', '/img/adoptionRabit.jpg', 0);

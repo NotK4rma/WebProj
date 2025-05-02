@@ -1,6 +1,19 @@
-document.getElementById("lgin").addEventListener("click", function () {
+const loginButton = document.getElementById("lgin");
+if(loginButton){
+  loginButton.addEventListener("click", function () {
     window.location.href = "../html/login.html";
   });
+}
+
+document.querySelector(".logo .txt").addEventListener("click", function(){
+  window.location.href = "../html/index.php"
+})
+
+
+document.querySelector(".faqdiv button").addEventListener("click", function(){
+  window.location.href = "../html/faqs.php"
+})
+
 
   document.getElementById("petsAdpt").addEventListener("click", function () {
     window.location.href = "../html/pets.php";
@@ -41,5 +54,18 @@ document.getElementById("lgin").addEventListener("click", function () {
 
   document.querySelector(".four .img-container:nth-child(4)").addEventListener("click",function(){
     window.location.href = "../html/pets.php?type=other"
+  })
+
+
+  document.querySelector(".section2 .grid-container .img-container:nth-child(1)").addEventListener("click", function() {
+    window.location.href = "../html/petInfo.php?id=98";
+});
+
+  document.querySelector(".section2 .grid-container .img-container:nth-child(2)").addEventListener("click",function(){
+    window.location.href = "../html/petInfo.php?id=99"
+  })
+
+  document.querySelector(".section2 .grid-container .img-container:nth-child(3)").addEventListener("click",function(){
+    window.location.href = "../html/petInfo.php?id=97"
   })
 

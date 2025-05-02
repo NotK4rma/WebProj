@@ -1,0 +1,365 @@
+
+
+.application-details-container {
+    padding: 2rem;
+    background-color: rgba(62, 16, 107, 0.818);
+    min-height: 600px;
+}
+
+
+.application-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.application-header h1 {
+    color: var(--asfer);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.application-status {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.status-pending {
+    background-color: #f0ad4e;
+    color: #fff;
+}
+
+.status-approved {
+    background-color: #5cb85c;
+    color: #fff;
+}
+
+.status-rejected {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+.status-label {
+    margin-right: 0.5rem;
+}
+
+.status-value {
+    font-size: 1.2rem;
+}
+
+
+.application-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.pet-details-card {
+    background-color: #f6f6f6;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .pet-details-card {
+        flex-direction: row;
+    }
+}
+
+.pet-image-container {
+    flex: 1;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .pet-image-container {
+        max-width: 400px;
+    }
+}
+
+.pet-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 300px;
+}
+
+.pet-info {
+    flex: 2;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.pet-name {
+    font-size: 2rem;
+    color: rgb(94, 8, 94);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+}
+
+/* .pet-name::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background-image: linear-gradient(90deg, rgb(0,183,255), rgb(255,48,255));
+    border-radius: 3px;
+} */
+
+.pet-characteristics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.pet-gender,
+.pet-age,
+.pet-type,
+.pet-breed {
+    background-color: var(--asfer);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.pet-description {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #555;
+    flex-grow: 1;
+}
+
+.view-pet-btn {
+    align-self: flex-start;
+    background-color: rgb(94, 8, 94);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.view-pet-btn:hover {
+    background-color: var(--asfer);
+    color: #333;
+    transform: scale(1.05);
+}
+
+
+.application-info-card {
+    background-color: #f6f6f6;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.application-info-card h2 {
+    color: rgb(94, 8, 94);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    font-size: 1.8rem;
+}
+
+.greeting{
+    text-decoration: none;
+    color: black;
+
+}
+
+.application-info-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 9%;
+    width: 75px;
+    height: 3px;
+    background-image: linear-gradient(90deg, rgb(0,183,255), rgb(255,48,255));
+    border-radius: 3px;
+}
+
+.info-group {
+    display: flex;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.info-label {
+    font-weight: bold;
+    min-width: 150px;
+    color: #666;
+}
+
+.info-value {
+    color: #333;
+}
+
+
+.application-notes {
+    margin-top: 2rem;
+}
+
+.application-notes h3 {
+    color: rgb(94, 8, 94);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.notes-content {
+    background-color: #f0f0f0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--asfer);
+    line-height: 1.6;
+    color: #555;
+}
+
+
+.status-message {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.pending-message {
+    background-color: rgba(240, 173, 78, 0.1);
+    border-left: 4px solid #f0ad4e;
+}
+
+.approved-message {
+    background-color: rgba(92, 184, 92, 0.1);
+    border-left: 4px solid #5cb85c;
+}
+
+.rejected-message {
+    background-color: rgba(217, 83, 79, 0.1);
+    border-left: 4px solid #d9534f;
+}
+
+.status-message h3 {
+    color: #333;
+    margin-bottom: 0.8rem;
+}
+
+.status-message p {
+    line-height: 1.6;
+    color: #555;
+}
+
+.browse-pets-btn {
+    display: inline-block;
+    background-color: rgb(94, 8, 94);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.browse-pets-btn:hover {
+    background-color: var(--asfer);
+    color: #333;
+    transform: scale(1.05);
+}
+
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.back-btn,
+.contact-btn {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-btn {
+    background-color: #f6f6f6;
+    color: #333;
+    border: 2px solid var(--asfer);
+}
+
+.contact-btn {
+    background-color: var(--asfer);
+    color: #333;
+}
+
+.back-btn:hover,
+.contact-btn:hover {
+    transform: scale(1.05);
+}
+
+.back-btn:hover {
+    background-color: var(--asfer);
+}
+
+.contact-btn:hover {
+    background-color: rgb(94, 8, 94);
+    color: white;
+}
+
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    margin: 3rem auto;
+    max-width: 600px;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.error-message a {
+    color: rgb(94, 8, 94);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width: 767px) {
+    .application-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .pet-image-container {
+        width: 100%;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+}

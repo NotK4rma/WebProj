@@ -47,10 +47,10 @@ session_start();
                     <div>
                         <div>
                             <ul>
-                                <li><a href="">Home</a></li>
-                                <li><a href="">Cats</a></li>
-                                <li><a href="">Dogs</a></li>
-                                <li><a href="">My Pets</a></li>
+                            <li><a href="index.php">Home</a></li>
+                            <li><a href="pets.php?type=cat">Cats</a></li>
+                            <li><a href="pets.php?type=dog">Dogs</a></li>
+                            <li><a href="applications.php">My Pets</a></li>
                             </ul>
                         </div>
                     </div>
@@ -105,7 +105,7 @@ session_start();
                     <P>Learn to translate dog years to human years just for fun, and vice versa. Finally an answer to how old your furry friend is.</P>
                     <button>Learn more</button>
                 </div>
-                <div class="article-1">
+                <div class="article-1 faqdiv">
                     <h2>PET ADOPTION FAQS</h2>
                     <P>Get answer to all you questions you haven't thought of for your adoption. </P>
                     <button>Learn more</button>

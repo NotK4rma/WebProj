@@ -1,6 +1,6 @@
-/* My Applications Page CSS */
 
-/* Status Badge Styles */
+
+
 .status-badge {
     display: inline-block;
     padding: 0.4rem 1rem;
@@ -24,7 +24,7 @@
     color: #fff;
 }
 
-/* Application Actions */
+
 .application-actions {
     display: flex;
     gap: 1rem;
@@ -68,7 +68,7 @@
     color: white;
 }
 
-/* Not Logged In Message */
+
 .not-logged-in {
     grid-column: 1 / -1;
     text-align: center;
@@ -96,6 +96,11 @@
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
+.greeting{
+    text-decoration: none;
+    color: black;
+
+}
 
 .login-button:hover {
     background-color: rgb(94, 8, 94);
@@ -103,7 +108,7 @@
     transform: scale(1.05);
 }
 
-/* Responsive adjustments */
+
 @media screen and (max-width: 767px) {
     .application-actions {
         flex-direction: column;

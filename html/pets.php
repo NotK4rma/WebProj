@@ -21,7 +21,7 @@ session_start();
         <section>
         <div class="sign-in">
             <?php if (isset($_SESSION["id"])): ?>
-                <span class="greeting">Hello, <?php echo htmlspecialchars($_SESSION["username"]); ?>!</span>
+                <a class="greeting" href="../php/logout.php">Hello, <?php echo htmlspecialchars($_SESSION["username"]); ?>!</a>
             <?php else: ?>
             
                 <span class="person material-symbols-outlined">person</span>
@@ -50,7 +50,7 @@ session_start();
                                 <li><a href="index.php">Home</a></li>
                                 <li><a href="pets.php?type=cat">Cats</a></li>
                                 <li><a href="pets.php?type=dog">Dogs</a></li>
-                                <li><a href="mypets.php">My Pets</a></li>
+                                <li><a href="applications.php">My Pets</a></li>
                             </ul>
                         </div>
                     </div>
@@ -59,7 +59,7 @@ session_start();
         </section> 
     </header>
 
-    <!-- Main Content -->
+    
     <main class="pets-container">
         <div class="pets-header">
             <h1>
@@ -110,13 +110,13 @@ session_start();
 
         <div class="pets-grid">
             <?php
-            // Include the database connection file
+            
             include '../php/dbConnection.php';
             
-            // Build query based on filters
+            
             $sql = "SELECT * FROM pets WHERE 1=1";
             
-            // Add type filter if specified
+            
             if(isset($_GET['type']) && !empty($_GET['type'])) {
                 $type = $conn->real_escape_string($_GET['type']);
                 if($type!="other"){
@@ -128,7 +128,7 @@ session_start();
                 
             }
             
-            // Add age filter if specified
+            
             if(isset($_GET['age']) && !empty($_GET['age'])) {
                 $age = $conn->real_escape_string($_GET['age']);
                 
@@ -148,18 +148,18 @@ session_start();
                 }
             }
             
-            // Add gender filter if specified
+            
             if(isset($_GET['gender']) && !empty($_GET['gender'])) {
                 $gender = $conn->real_escape_string($_GET['gender']);
                 $sql .= " AND gender = '$gender'";
             }
             
-            // Execute query
+            
             $result = $conn->query($sql);
             
-            // Check if there are results
+            
             if ($result && $result->num_rows > 0) {
-                // Output data of each row
+                
                 while($row = $result->fetch_assoc()) {
                     $pet_image = !empty($row['image_path']) ? $row['image_path'] : '../img/pet-placeholder.jpg';
                     $pet_name = htmlspecialchars($row['name']);
@@ -169,10 +169,10 @@ session_start();
                     $pet_gender = htmlspecialchars($row['gender']);
                     $pet_id = htmlspecialchars($row['id']);
                     
-                    // Age suffix
+                    
                     $age_suffix = $pet_age == 1 ? "year" : "years";
                     
-                    // Pet card HTML
+                    
                     echo "
                     <div class='pet-card'>
                         <div class='pet-image-container'>
@@ -194,7 +194,7 @@ session_start();
                                     <span class='detail-value'>$pet_breed</span>
                                 </div>
                             </div>
-                            <a href='pet-details.php?id=$pet_id' class='pet-learn-more'>Learn More</a>
+                            <a href='petInfo.php?id=$pet_id' class='pet-learn-more'>Learn More</a>
                         </div>
                     </div>
                     ";
@@ -203,7 +203,7 @@ session_start();
                 echo "<div class='no-pets-message'>No pets found matching your criteria. Try adjusting your filters.</div>";
             }
             
-            // Close the database connection
+            
             $conn->close();
             ?>
         </div>

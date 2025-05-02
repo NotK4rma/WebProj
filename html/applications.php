@@ -22,7 +22,7 @@
         <section>
         <div class="sign-in">
             <?php if (isset($_SESSION["id"])): ?>
-                <span class="greeting">Hello, <?php echo htmlspecialchars($_SESSION["username"]); ?>!</span>
+                <a class="greeting" href="../php/logout.php">Hello, <?php echo htmlspecialchars($_SESSION["username"]); ?>!</a>
             <?php else: ?>
             
                 <span class="person material-symbols-outlined">person</span>
@@ -51,8 +51,8 @@
                                 <li><a href="index.php">Home</a></li>
                                 <li><a href="pets.php?type=cat">Cats</a></li>
                                 <li><a href="pets.php?type=dog">Dogs</a></li>
-                                <li><a href="mypets.php">My Pets</a></li>
-                                <li><a href="my-applications.php">My Applications</a></li>
+                                <li><a href="applications.php">My Pets</a></li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
         </section> 
     </header>
 
-    <!-- Main Content -->
+    
     <main class="pets-container">
         <div class="pets-header">
             <h1>My Adoption Applications</h1>
@@ -104,7 +104,7 @@
             
             
             
-            // Check if user is logged in
+            
             if(!isset($_SESSION['id'])) {
                 echo "<div class='not-logged-in'>
                         <h2>You need to be logged in to view your applications</h2>
@@ -115,16 +115,16 @@
             
             $user_id = $_SESSION['id'];
             
-            // Include the database connection file
+            
             include '../php/dbConnection.php';
             
-            // Build query based on filters
+            
             $sql = "SELECT a.*, p.name, p.type, p.breed, p.age, p.gender, p.image_path 
                     FROM adoption_applications a 
                     JOIN pets p ON a.pet_id = p.id 
                     WHERE a.user_id = $user_id";
             
-            // Add type filter if specified
+            
             if(isset($_GET['type']) && !empty($_GET['type'])) {
                 $type = $conn->real_escape_string($_GET['type']);
                 if($type != "other") {
@@ -134,25 +134,25 @@
                 }
             }
             
-            // Add status filter if specified
+            
             if(isset($_GET['status']) && !empty($_GET['status'])) {
                 $status = $conn->real_escape_string($_GET['status']);
                 $sql .= " AND a.status = '$status'";
             }
             
-            // Add sorting
+            
             if(isset($_GET['sort']) && $_GET['sort'] == 'oldest') {
                 $sql .= " ORDER BY a.application_date ASC";
             } else {
-                $sql .= " ORDER BY a.application_date DESC"; // Default newest first
+                $sql .= " ORDER BY a.application_date DESC"; 
             }
             
-            // Execute query
+            
             $result = $conn->query($sql);
             
-            // Check if there are results
+            
             if ($result && $result->num_rows > 0) {
-                // Output data of each row
+                
                 while($row = $result->fetch_assoc()) {
                     $pet_image = !empty($row['image_path']) ? $row['image_path'] : '../img/pet-placeholder.jpg';
                     $pet_name = htmlspecialchars($row['name']);
@@ -165,13 +165,13 @@
                     $application_date = date('M d, Y', strtotime($row['application_date']));
                     $status = htmlspecialchars($row['status']);
                     
-                    // Age suffix
+                    
                     $age_suffix = $pet_age == 1 ? "year" : "years";
                     
-                    // Status class
+                    
                     $status_class = 'status-' . $status;
                     
-                    // Application card HTML
+                    
                     echo "
                     <div class='pet-card'>
                         <div class='pet-image-container'>
@@ -202,8 +202,8 @@
                                 </div>
                             </div>
                             <div class='application-actions'>
-                                <a href='pet-details.php?id=$pet_id' class='pet-learn-more'>View Pet</a>
-                                <a href='application-details.php?id=$application_id' class='application-details-btn'>Application Details</a>
+                                <a href='petInfo.php?id=$pet_id' class='pet-learn-more'>View Pet</a>
+                                <a href='appInfo.php?id=$application_id' class='application-details-btn'>Application Details</a>
                             </div>
                         </div>
                     </div>
@@ -213,7 +213,7 @@
                 echo "<div class='no-pets-message'>No applications found matching your criteria. Try adjusting your filters or <a href='pets.php'>adopt a pet</a>!</div>";
             }
             
-            // Close the database connection
+            
             $conn->close();
             ?>
         </div>

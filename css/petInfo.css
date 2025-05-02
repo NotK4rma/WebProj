@@ -1,13 +1,13 @@
-/* Application Details CSS */
 
-.application-details-container {
+
+.pet-details-container {
     padding: 2rem;
     background-color: rgba(62, 16, 107, 0.818);
     min-height: 600px;
 }
 
-/* Header Styles */
-.application-header {
+
+.pet-details-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,14 +15,19 @@
     flex-wrap: wrap;
     gap: 1rem;
 }
+.greeting{
+    text-decoration: none;
+    color: black;
 
-.application-header h1 {
+}
+
+.pet-details-header h1 {
     color: var(--asfer);
     font-size: 2.5rem;
     font-weight: bold;
 }
 
-.application-status {
+.pet-status {
     display: flex;
     align-items: center;
     padding: 0.8rem 1.5rem;
@@ -30,79 +35,66 @@
     font-weight: bold;
 }
 
-.status-pending {
-    background-color: #f0ad4e;
-    color: #fff;
-}
-
-.status-approved {
+.status-available {
     background-color: #5cb85c;
     color: #fff;
 }
 
-.status-rejected {
+.status-adopted {
     background-color: #d9534f;
     color: #fff;
 }
 
-.status-label {
-    margin-right: 0.5rem;
-}
 
-.status-value {
-    font-size: 1.2rem;
-}
-
-/* Application Content */
-.application-content {
+.pet-profile {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-}
-
-/* Pet Details Card */
-.pet-details-card {
+    margin-bottom: 3rem;
     background-color: #f6f6f6;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    position: relative;
 }
 
 @media (min-width: 768px) {
-    .pet-details-card {
+    .pet-profile {
         flex-direction: row;
     }
 }
 
-.pet-image-container {
+
+.pet-image-gallery {
     flex: 1;
     max-width: 100%;
 }
 
 @media (min-width: 768px) {
-    .pet-image-container {
+    .pet-image-gallery {
         max-width: 400px;
     }
 }
 
-.pet-image {
+.main-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     min-height: 300px;
 }
 
-.pet-info {
+
+.pet-info-card {
     flex: 2;
     padding: 2rem;
     display: flex;
     flex-direction: column;
 }
 
-.pet-name {
+.pet-basic-info {
+    margin-bottom: 1.5rem;
+}
+
+.pet-basic-info h2 {
     font-size: 2rem;
     color: rgb(94, 8, 94);
     margin-bottom: 1rem;
@@ -110,7 +102,7 @@
     position: relative;
 }
 
-.pet-name::after {
+.pet-basic-info h2::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -121,17 +113,13 @@
     border-radius: 3px;
 }
 
-.pet-characteristics {
+.pet-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem;
-    margin-bottom: 1.5rem;
 }
 
-.pet-gender,
-.pet-age,
-.pet-type,
-.pet-breed {
+.pet-tag {
     background-color: var(--asfer);
     padding: 0.4rem 1rem;
     border-radius: 50px;
@@ -140,127 +128,84 @@
     color: #333;
 }
 
+
 .pet-description {
     margin-bottom: 1.5rem;
-    line-height: 1.6;
-    color: #555;
     flex-grow: 1;
 }
 
-.view-pet-btn {
-    align-self: flex-start;
+.pet-description h3 {
+    color: rgb(94, 8, 94);
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.pet-description p {
+    line-height: 1.6;
+    color: #555;
+}
+
+
+.adoption-section {
+    margin-top: 1rem;
+}
+
+.apply-btn {
     background-color: rgb(94, 8, 94);
     color: white;
-    padding: 0.8rem 1.5rem;
+    padding: 1rem 2rem;
+    border: none;
     border-radius: 50px;
     font-weight: bold;
-    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.view-pet-btn:hover {
+.apply-btn:hover {
     background-color: var(--asfer);
     color: #333;
     transform: scale(1.05);
 }
 
-/* Application Info Card */
-.application-info-card {
-    background-color: #f6f6f6;
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.apply-btn.disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }
 
-.application-info-card h2 {
-    color: rgb(94, 8, 94);
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    position: relative;
-    font-size: 1.8rem;
+.apply-btn.disabled:hover {
+    background-color: #cccccc;
+    transform: none;
 }
 
-.application-info-card h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background-image: linear-gradient(90deg, rgb(0,183,255), rgb(255,48,255));
-    border-radius: 3px;
-}
-
-.info-group {
-    display: flex;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #eee;
-}
-
-.info-label {
-    font-weight: bold;
-    min-width: 150px;
+.login-message {
+    margin-top: 0.8rem;
     color: #666;
 }
 
-.info-value {
-    color: #333;
-}
-
-/* Notes Section */
-.application-notes {
-    margin-top: 2rem;
-}
-
-.application-notes h3 {
+.login-message a {
     color: rgb(94, 8, 94);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
-.notes-content {
+.adopted-message, .already-applied-message {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 10px;
     background-color: #f0f0f0;
-    padding: 1.5rem;
-    border-radius: 10px;
     border-left: 4px solid var(--asfer);
-    line-height: 1.6;
-    color: #555;
 }
 
-/* Status Messages */
-.status-message {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    border-radius: 10px;
+.adopted-message span, .already-applied-message span {
+    color: var(--asfer);
+    font-size: 2rem;
 }
 
-.pending-message {
-    background-color: rgba(240, 173, 78, 0.1);
-    border-left: 4px solid #f0ad4e;
-}
-
-.approved-message {
-    background-color: rgba(92, 184, 92, 0.1);
-    border-left: 4px solid #5cb85c;
-}
-
-.rejected-message {
-    background-color: rgba(217, 83, 79, 0.1);
-    border-left: 4px solid #d9534f;
-}
-
-.status-message h3 {
-    color: #333;
-    margin-bottom: 0.8rem;
-}
-
-.status-message p {
-    line-height: 1.6;
-    color: #555;
-}
-
-.browse-pets-btn {
+.view-application-btn {
+    margin-top: 1rem;
     display: inline-block;
     background-color: rgb(94, 8, 94);
     color: white;
@@ -268,92 +213,265 @@
     border-radius: 50px;
     font-weight: bold;
     text-decoration: none;
-    margin-top: 1rem;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.browse-pets-btn:hover {
+.view-application-btn:hover {
     background-color: var(--asfer);
     color: #333;
     transform: scale(1.05);
 }
 
-/* Action Buttons */
-.action-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-    gap: 1rem;
-    flex-wrap: wrap;
+
+.pet-additional-info {
+    background-color: #f6f6f6;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.back-btn,
-.contact-btn {
-    flex: 1;
+.pet-additional-info h3 {
+    color: rgb(94, 8, 94);
+    margin-bottom: 1.5rem;
     text-align: center;
-    padding: 1rem;
-    border-radius: 50px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.5rem;
+}
+
+.info-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-item {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+}
+
+.info-item span {
+    font-size: 2.5rem;
+    color: var(--asfer);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.info-item h4 {
+    color: rgb(94, 8, 94);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.info-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+.back-to-pets {
+    text-align: center;
+    margin-top: 1.5rem;
 }
 
 .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     background-color: #f6f6f6;
     color: #333;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
     border: 2px solid var(--asfer);
-}
-
-.contact-btn {
-    background-color: var(--asfer);
-    color: #333;
-}
-
-.back-btn:hover,
-.contact-btn:hover {
-    transform: scale(1.05);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .back-btn:hover {
     background-color: var(--asfer);
+    transform: scale(1.05);
 }
 
-.contact-btn:hover {
-    background-color: rgb(94, 8, 94);
-    color: white;
-}
 
-/* Error Message */
-.error-message {
-    background-color: #f8d7da;
-    color: #721c24;
+.error-message, .success-message {
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
-    margin: 3rem auto;
-    max-width: 600px;
+    margin: 2rem auto;
+    max-width: 800px;
     font-size: 1.2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.error-message a {
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.error-message a, .success-message a {
     color: rgb(94, 8, 94);
     font-weight: bold;
     text-decoration: underline;
 }
 
-/* Responsive */
-@media screen and (max-width: 767px) {
-    .application-header {
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #f6f6f6;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 600px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: rgb(94, 8, 94);
+}
+
+.modal-content h2 {
+    color: rgb(94, 8, 94);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    font-size: 1.8rem;
+}
+
+.modal-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background-image: linear-gradient(90deg, rgb(0,183,255), rgb(255,48,255));
+    border-radius: 3px;
+}
+
+
+.adoption-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: #333;
+    font-weight: bold;
+}
+
+.form-group textarea {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    resize: vertical;
+    min-height: 150px;
+    font-family: inherit;
+}
+
+.form-note {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--asfer);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.cancel-btn, .submit-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cancel-btn {
+    background-color: #f6f6f6;
+    color: #333;
+    border: 2px solid var(--asfer);
+}
+
+.submit-btn {
+    background-color: rgb(94, 8, 94);
+    color: white;
+}
+
+.cancel-btn:hover, .submit-btn:hover {
+    transform: scale(1.05);
+}
+
+.cancel-btn:hover {
+    background-color: var(--asfer);
+}
+
+.submit-btn:hover {
+    background-color: var(--asfer);
+    color: #333;
+}
+
+
+@media screen and (max-width: 768px) {
+    .pet-details-header {
         flex-direction: column;
         align-items: flex-start;
     }
     
-    .pet-image-container {
-        width: 100%;
+    .form-actions {
+        flex-direction: column;
     }
     
-    .action-buttons {
-        flex-direction: column;
+    .modal-content {
+        width: 90%;
+        margin: 10% auto;
     }
 }
